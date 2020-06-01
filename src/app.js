@@ -17,8 +17,8 @@
       templateUrl: "./src/login.html",
     });
 
-    $stateProvider.state("homePage", {
-      url: "/homePage?username",
+    $stateProvider.state("home", {
+      url: "/home?username",
       templateUrl: "./src/home.html",
       controller: function ($scope, $stateParams) {
         $scope.username = $stateParams.username;
