@@ -30,6 +30,7 @@
         return $http({
           method: "GET",
           url: base_url + "getVideosForHomePage.php",
+          header: { "Access-Control-Allow-Origin": "*" },
         });
       };
       return service;
