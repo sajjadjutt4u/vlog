@@ -11,12 +11,21 @@
       } else {
         $window.location.href = "#!/login";
       }
+
+      var promise = apicall.getHomeVideos();
+      promise
+        .then(function (reponse) {
+          $scope.videos = reponse.data;
+        })
+        .catch(function (error) {
+          console.log("error in fetching videos");
+        });
     })
     .factory("apicall", function ($http) {
       var service = this;
-      // service.getHomeVideos = function (username) {
-      //   $http.get();
-      // };
+      service.getHomeVideos = function () {
+        return $http.get("http://www.simx.tv/getVideosForHomePage.php");
+      };
       return service;
     });
 
