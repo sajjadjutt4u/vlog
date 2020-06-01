@@ -16,6 +16,7 @@
       promise
         .then(function (reponse) {
           $scope.videos = reponse.data;
+          console.log("api callback:", reponse);
         })
         .catch(function (error) {
           console.log("error in fetching videos");
@@ -24,7 +25,10 @@
     .factory("apicall", function ($http) {
       var service = this;
       service.getHomeVideos = function () {
-        return $http.get("http://www.simx.tv/getVideosForHomePage.php");
+        return $http({
+          method: "GET",
+          url: "http://www.simx.tv/getVideosForHomePage.php",
+        });
       };
       return service;
     });
