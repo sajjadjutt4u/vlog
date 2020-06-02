@@ -24,12 +24,12 @@
     })
     .factory("apicall", function ($http) {
       var service = this;
-      service.base_url = "http://www.simx.tv/";
+      service.base_url = "https://www.simx.tv/";
 
       service.getHomeVideos = function () {
         return $http({
           method: "GET",
-          url: base_url + "getVideosForHomePage.php",
+          url: service.base_url + "getVideosForHomePage.php",
           header: { "Access-Control-Allow-Origin": "*" },
         });
       };
