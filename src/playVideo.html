@@ -1,0 +1,26 @@
+<style>
+  #video-div {
+    height: 400px;
+  }
+  .video-js {
+    width: 100%;
+    height: 400px;
+    }
+</style>
+<div ng-controller="playVideoController">
+  <div class="row m-2"  ng-if="videoPath" >
+    <div class="col-8" id="video-div">
+      <vjs-video-containervjs-ratio="4:3">
+        <video
+          class="video-js vjs-default-skin"
+          controls
+          preload="auto"
+          poster="{{poster}}"
+        >
+          <source src="{{videoPath}}" type="video/mp4" />
+        </video>
+      </vjs-video-container>
+    </div>
+    <div class="col-4"></div>
+  </div>
+</div>
